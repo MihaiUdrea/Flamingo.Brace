@@ -95,9 +95,11 @@
 
         /* Stilizarea slideshow-ului */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 400px;
   position: relative;
   margin: auto;
+  margin-right: 10px;
+  align-self: right;
 }
 
 /* Ascunderea imaginilor implicit */
@@ -137,6 +139,8 @@
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  margin: auto;
+
 }
 
 .active, .dot:hover {
@@ -203,7 +207,7 @@
               <br>
               
               <!-- Cerculețele de navigare -->
-              <div style="text-align:center">
+              <div style="text-align:right">
                 <span class="dot" onclick="currentSlide(1)"></span> 
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span> 
