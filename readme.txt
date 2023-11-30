@@ -1,0 +1,1 @@
+logo.png: DALL·E 2023-11-30 09.56.37 - A cheerful and vibrant logo design inspired by a flamingo and woven elastic bracelets. The logo should feature a stylized, playful flamingo in a dynam
