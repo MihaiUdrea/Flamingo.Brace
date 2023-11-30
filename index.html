@@ -9,6 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            
         }
 
         .container {
@@ -91,6 +92,57 @@
             margin-right: 20px; /* Adaugă o margine la dreapta */
             text-align: left; /* Aliniază textul în interiorul secțiunii la stânga */
         }
+
+        /* Stilizarea slideshow-ului */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Ascunderea imaginilor implicit */
+.mySlides {
+  display: none;
+}
+
+/* Butoanele "Următorul" și "Precedentul" */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Pozitionarea butonului "Următorul" la dreapta */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Cerculețele de jos */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
     </style>
 </head>
 
@@ -117,9 +169,90 @@
                 <h1>Brățări, Inele și Coliere Elastice și Împletite</h1>
                 <p>Descoperă colecția noastră unică de bijuterii artizanale, perfecte pentru orice ocazie. Fie că ești în căutarea unui accesoriu subtil sau a unei declarații de stil, avem ceva special pentru tine.</p>
             </div>
+            <!-- Un logo
             <div class="logo">
-                <img src="logo.png" alt="Flamingo Bracelet Logo">
-            </div>
+                <img src="logo.png" width="500px" height="500px" alt="Flamingo Bracelet Logo">
+            </div> -->
+            <div class="slideshow-container">
+
+                <!-- Slide-uri cu imagini -->
+                <div class="mySlides fade">
+                    <img src="logo.png" style="width:100%">
+                  </div>
+
+                <div class="mySlides fade">
+                  <img src="images(1).jpg" style="width:100%">
+                </div>
+              
+                <div class="mySlides fade">
+                    <img src="images(2).jpg" style="width:100%">
+                </div>
+              
+                <div class="mySlides fade">
+                    <img src="images(3).jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images(4).png" style="width:100%">
+                </div>
+              
+                <!-- Butoanele de control -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <br>
+              
+              <!-- Cerculețele de navigare -->
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+                <span class="dot" onclick="currentSlide(5)"></span> 
+              </div>
+
+              <!-- Adăugarea JavaScript inline -->
+              <script>
+                var slideIndex = 0;
+                showSlides(); // Inițiază slideshow-ul
+            
+                function plusSlides(n) {
+                  slideIndex += n;
+                  showSlides();
+                  resetTimer(); // Resetează timer-ul după interacțiunea manuală
+                }
+            
+                function currentSlide(n) {
+                  slideIndex = n - 1;
+                  showSlides();
+                  resetTimer(); // Resetează timer-ul după interacțiunea manuală
+                }
+            
+                function showSlides() {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                     slides[i].style.display = "none";  
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {slideIndex = 1} 
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+            
+                var timer;
+                function resetTimer() {
+                    clearInterval(timer);
+                    timer = setInterval(showSlides, 4000); // Schimbă imaginea la fiecare 4000 ms (4 secunde)
+                }
+            
+                resetTimer(); // Inițiază timer-ul
+            </script>          
+              
         </section>
         <section id="contact">
             <h2>Contactează-ne</h2>
